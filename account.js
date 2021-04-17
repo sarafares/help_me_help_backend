@@ -1,13 +1,13 @@
 class account
 {
-    constructor(ID,name,userName,password,country,Governorate,email,registerStrategy)
+    constructor(id,name,userName,password,country,governorate,email,registerStrategy)
     {
-        this.ID=ID;
+        this.id=id;
         this.name=name;
         this.userName=userName;
         this.password=password;
         this.country=country;
-        this.Governorate=Governorate;
+        this.governorate=governorate;
         this.email=email;
         this.registerStrategy=registerStrategy;
     }

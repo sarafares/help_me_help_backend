@@ -1,5 +1,5 @@
 const account=require("./account");
-class User extends account
+class user extends account
 {
     constructor(birthday,address,zakatAmount,zakatProgress,role,interests,skills,donationHistory,joinedCampaigns)
     {
@@ -48,3 +48,4 @@ class User extends account
     
     
 }
+module.exports=user;

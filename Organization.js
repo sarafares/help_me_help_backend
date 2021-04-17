@@ -1,5 +1,5 @@
 const account=require("./account");
-class Organization extends account
+class organization extends account
 {
     constructor(category,subCategory,organizationType,description,purpose,rating,website,socialMedia,hotline,logo,requestStatus,location)
     {
@@ -33,3 +33,4 @@ class Organization extends account
 
     }
 }
+module.exports=organization;
