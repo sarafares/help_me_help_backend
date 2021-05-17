@@ -1,4 +1,4 @@
-const db=require('../Database/connection')
+var db=require('../Database/connection')
 var express = require('express');
 var router = express.Router();
 var account=require('../Models/account');
@@ -12,13 +12,15 @@ db.query('Select name,age,address,email,zakah_amount,password,role,birthdate,cou
     if(err)
     {throw err;}
     if(result=='')
-    {res.json({
-        message:"not found"
-    });
-    //db.query('Select name,password,country,Governorate,email, from organization where username = ?',[username],function(err,result,fields){});
+    {
+        res.json({
+        message:"not found"});
+    //  db.query('Select name,password,country,Governorate,email, from organization where username = ?',[username],function(err,result,fields){});
 
     }
-    else {
+    else 
+    {
+        
         const name=result[0].name;
         const age=result[0].age;
         const address=result[0].address;
@@ -34,17 +36,17 @@ db.query('Select name,age,address,email,zakah_amount,password,role,birthdate,cou
 
         db.query('select name from country where ID=?',[country],function(err,record,fields){
             countryName=record[0].name;
-        }); 
-        db.query('select name from governorate where ID=?',[governorate],function(err,record,fields){
-            governorateName=record[0].name;                            
-        });
-        account=new User(name,username,password,countryName,governorateName,email,age,address,birthdate,zakahamount,null,role);
-        console.log(account);
-        res.status(200).json({
-            message:"DONE"
+            db.query('select name from governorate where ID=?',[governorate],function(err,record,fields){
+                governorateName=record[0].name;                            
+                account=new User(name,username,password,countryName,governorateName,email,age,address,birthdate,zakahamount,null,role);
+                console.log(account);
+                res.status(200).json({
+                    message:"DONE"
+                });
+            });
         });
     }
 });
 });
 
-module.exports=router
+module.exports=router;
