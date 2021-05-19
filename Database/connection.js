@@ -1,11 +1,11 @@
-const mysql=require('mysql');
+const mysql=require('mysql2');
 
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'project123',
     database:'helpmehelp',
-    stringifyObjects:'true',
+    // stringifyObjects:'true',
 });
 
 //connect to db
