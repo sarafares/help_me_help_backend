@@ -19,7 +19,7 @@ class User extends account
     }
     static login(username,pass)
     {
-        return db.execute('Select name from user where username = ?',[username]);
+        return db.execute('Select * from user where username = ?',[username]);
         // db.query('Select name,age,address,email,zakah_amount,password,role,birthdate,countryID,governorateID from user where username = ? ',[username],function(err,result,fields){
         //     if(err)
         //     {throw err;}

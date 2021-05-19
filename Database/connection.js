@@ -3,7 +3,8 @@ const mysql=require('mysql2');
 const db=mysql.createConnection({
     host:'localhost',
     user:'root',
-    password:'project123',
+    password:'database',
+    // password:'project123',
     database:'helpmehelp',
     // stringifyObjects:'true',
 });
@@ -17,3 +18,4 @@ db.connect(function(err){
 });
 
 module.exports=db;
+module.exports=db.promise();
