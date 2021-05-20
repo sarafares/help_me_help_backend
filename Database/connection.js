@@ -17,5 +17,4 @@ db.connect(function(err){
     console.log('Mysql connected');
 });
 
-module.exports=db;
 module.exports=db.promise();

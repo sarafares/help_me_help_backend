@@ -71,7 +71,7 @@ class User extends account
     }
     updateProfile(username)
     {
-        //return db.execute();
+        return db.execute('UPDATE user SET name=?,password=?,email=?,age=?,address=?,birthdate=? where username=?',[this.name,this.password,this.email,this.age,this.address,this.birthday,username]);
     }
     rateCampaign(id,rate)
     {

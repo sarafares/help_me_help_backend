@@ -15,9 +15,9 @@ class account
     {
         throw new Error("Abstract Method has no implementation");
     }
-    updateProfile()
+    updateProfile(username)
     {
-        throw new Error("Abstract Method has no implementation");
+        //throw new Error("Abstract Method has no implementation");
     }
     approveApplicants(VolunteerCampaign)
     {
