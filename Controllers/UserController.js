@@ -1,8 +1,8 @@
 const User=require('../Models/User');
 
 exports.GetUser=function(req,res){
-    //const username=req.body.username;
-    const username=req.params.username;
+    const username=req.body.username;
+    //const username=req.params.username;
     User.findbyID(username)
     .then(([user])=>{
         res.status(200).json({
