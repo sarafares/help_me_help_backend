@@ -17,10 +17,9 @@ class User extends account
        // this.donationHistory=donationHistory;
         //this.joinedCampaigns=joinedCampaigns;
     }
-    static login(username,pass)
+    static findbyID(username)
     {
         return db.execute('Select * from user where username = ?',[username]);
-        // db.query('Select name,age,address,email,zakah_amount,password,role,birthdate,countryID,governorateID from user where username = ? ',[username],function(err,result,fields){
         //     if(err)
         //     {throw err;}
         //     if(result=='')
@@ -58,6 +57,10 @@ class User extends account
         //     }
         // });
     }
+    login()
+    {
+
+    }
     updateSchedule()
     {
         
@@ -66,9 +69,9 @@ class User extends account
     {
 
     }
-    updateProfile()
+    updateProfile(username)
     {
-
+        //return db.execute();
     }
     rateCampaign(id,rate)
     {
